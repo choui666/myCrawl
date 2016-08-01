@@ -1,0 +1,12 @@
+<div class="fm" style="background-image:url(http://content.gamebean.com/image/sdk/new/bg.jpg);">
+    <section class="notice-box" ng-controller="Login__PromptNoticeController as vm">
+        <a ng-click="vm.closeOrNext();" class="agr-close"></a>
+        <h1>{{'login_v13_key1' | translate}}<!--公告信息--></h1>
+        <div class="notice-text">
+            <div>
+                <P ng-bind-html="vm.content | sce_trust"></P>
+            </div>
+            <!--<div class="notice-tips"><span><input type="checkbox" checked>{{'login_v13_key2' | translate}}&lt;!&ndash;不再提示本次活动&ndash;&gt;</span></div>-->
+        </div>
+    </section>
+</div>

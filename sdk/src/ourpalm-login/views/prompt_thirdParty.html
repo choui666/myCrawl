@@ -1,0 +1,12 @@
+<div class="fm" style="background-image:url(http://content.gamebean.com/image/sdk/new/bg.jpg);">
+   <div class="pop-box" ng-controller="Login__PromptThirdController as vm">>
+   <div class="loading-tips" ng-show="!vm.popShow"><em></em>正在处理，请稍候…</div>
+       <!--温馨提示2-->
+       <div class="pop-tips" ng-show="vm.popShow">
+         <h1>温馨提示</h1>
+         <div class="text">
+         <p> {{vm.content}}</p>
+         </div>
+         <div class="btn-box"><a href="javascript:void(0);"   ng-click="vm.go()" class="confirm-btn">知道了</a></div>
+       </div>
+</div>

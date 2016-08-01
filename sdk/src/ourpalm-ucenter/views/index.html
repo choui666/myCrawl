@@ -1,0 +1,35 @@
+<div class="fm" style="background-image:url(http://content.gamebean.com/image/sdk/new/bg.jpg);">
+    <div class="list-wrap user-box" ng-controller="UCenter__IndexController as vm">
+        <!--顶部 start:-->
+        <header class="header">
+            <h1><em></em>{{'login_v31_key1' | translate}}<!--用户中心--></h1>
+            <a href="javascript:void(0)" class="back" ourpalm-goto="/ucenter/menu"></a>
+            <a href="javascript:void(0)" class="close" ourpalm-close-webview></a>
+        </header>
+        <!--顶部 end-->
+        <section class="user-center-box">
+            <!--左侧用户信息 start:-->
+            <div class="user-info l">
+                <div class="user-name">
+                    <div><img src="../../images/user_pic.png"/></div>
+                    <P>{{'login_v31_key2' | translate}}<!--昵称--></p>
+                    <P><em ng-bind="vm.nickName | substr:5:'...'"></em><a href="#/ucenter/changenickname" class="modify-name"></a></P>
+                </div>
+                <div class="user-account">
+          <span>
+          <P>{{'login_v31_key3' | translate}}<!--账号--></P>
+          <P class="black" ng-bind="vm.userName | substr:15:'...'"><!--blrgame1232--></P>
+          </span></div>
+            </div>
+            <!--左侧用户信息 end-->
+            <div class="user-list r">
+                <ul>
+                    <li class="bind"><a ng-click="vm.gotoBindPhone();"><span><em></em><i>{{'login_v31_key4' | translate}}<!--绑定手机--></i></span></a></li>
+                    <li class="modify"><a ourpalm-goto="/ucenter/changepassword"><span><em></em><i>{{'login_v31_key5' | translate}}<!--修改密码--></i></span></a></li>
+                    <!--<li class="social"><a ng-click="toast('敬请期待')"><span><em></em><i>社交账号绑定</i></span></a></li>-->
+                    <li class="welfare"><a ng-click="toast('尚未开启,敬请期待!');"><span><em></em><i></i>{{'login_v31_key6' | translate}}<!--福利--></span></a></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,250 @@
+.ourpalm-input-focus-mask, .ourpalm-textarea-focus-mask {
+    z-index: 999;
+    position: fixed;
+    top: 50px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    background-color: #2b2b2b;
+    filter: alpha(opacity=70);
+    -moz-opacity: 0.7;
+    -khtml-opacity: 0.7;
+    opacity: 0.7;
+}
+
+#ourpalm-input-focus {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 90%;
+    height: 50px;
+    background: #ffffff;
+    text-align: center;
+    z-index: 10000;
+    font-size: .28rem;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border: 0px;
+    border-radius: 0px;
+}
+
+.ourpalm-input-focus-btn {
+    position: fixed;
+    text-align: center;
+    background-color: #45D1E6;
+    color: #ffffff;
+    font-size: 16px;
+    top: 0px;
+    right: 0px;
+    width: 10%;
+    height: 50px;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    z-index: 10000;
+}
+
+.ourpalm-textarea-focus-mask {
+    top: 70px;
+}
+
+#ourpalm-textarea-focus {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 88%;
+    height: 70px;
+    background: #ffffff;
+    z-index: 10000;
+    font-size: .28rem;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border: 0px;
+    border-radius: 0px;
+    padding: 0 1%;
+}
+
+.ourpalm-textarea-focus-btn {
+    position: fixed;
+    text-align: center;
+    background-color: #45D1E6;
+    color: #ffffff;
+    font-size: 16px;
+    top: 0px;
+    right: 0px;
+    width: 10%;
+    height: 70px;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    z-index: 10000;
+}
+
+/*
+这里不在用h5的动画 存在浏览器的兼容性问题 主要表现在android手机上 这里用ngAnimate实现动画效果
+@keyframes bottom-in-out {
+    0% {
+        bottom: -50%;
+    }
+    20% {
+        bottom: 25%;
+    }
+    80% {
+        bottom: 25%;
+    }
+    100% {
+        bottom: -50%;
+    }
+}
+*/
+
+.ourpalm-toast {
+    position: fixed;
+    bottom: 25%;
+    left: 50%;
+    background-color: #000000;
+    padding: 5px 15px;
+    transform: translate(-50%, -50%);
+    -khtml-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 12px;
+    border-radius: 15px;
+    z-index: 100;
+
+    /*
+    这里不在用h5的动画 存在浏览器的兼容性问题 主要表现在android手机上 这里用ngAnimate实现动画效果
+    -webkit-animation: bottom-in-out;
+    -o-animation: bottom-in-out;
+    animation: bottom-in-out;
+    -webkit-animation-duration: 2s;
+    -moz-animation-duration: 2s;
+    -o-animation-duration: 2s;
+    animation-duration: 2s;
+    */
+}
+
+.ourpalm-toast.ng-move,
+.ourpalm-toast.ng-enter,
+.ourpalm-toast.ng-leave {
+    transition: all linear 0.1s;
+}
+
+.ourpalm-toast.ng-leave.ng-leave-active,
+.ourpalm-toast.ng-move,
+.ourpalm-toast.ng-enter {
+    bottom: -10%;
+}
+
+.ourpalm-toast.ng-leave,
+.ourpalm-toast.ng-move.ng-move-active,
+.ourpalm-toast.ng-enter.ng-enter-active {
+    bottom: 25%;
+}
+
+@-webkit-keyframes ourpalm-shake {
+    0%, 100% {
+        -webkit-transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        -webkit-transform: translateX(-8px);
+    }
+    20%, 40%, 60%, 80% {
+        -webkit-transform: translateX(8px);
+    }
+}
+
+@-moz-keyframes ourpalm-shake {
+    0%, 100% {
+        -moz-transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        -moz-transform: translateX(-8px);
+    }
+    20%, 40%, 60%, 80% {
+        -moz-transform: translateX(8px);
+    }
+}
+
+.ourpalm-shake {
+    -webkit-animation-name: ourpalm-shake;
+    -webkit-animation-duration: 0.8s;
+    -moz--name: ourpalm-shake;
+    -moz-animation-duration: 0.8s;
+}
+
+.ourpalm-loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 32px;
+    height: 32px;
+    margin-top: -16px;
+    margin-left: -16px;
+    z-index: 1001;
+    border-radius: 50%;
+    -webkit-animation: load4 1.3s infinite linear;
+    animation: ourpalm-loader 1.3s infinite linear;
+}
+
+@-webkit-keyframes ourpalm-loader {
+    0%,
+    100% {
+        box-shadow: 0em -3em 0em 0.2em #ffffff, 2em -2em 0 0em #ffffff, 3em 0em 0 -0.5em #ffffff, 2em 2em 0 -0.5em #ffffff, 0em 3em 0 -0.5em #ffffff, -2em 2em 0 -0.5em #ffffff, -3em 0em 0 -0.5em #ffffff, -2em -2em 0 0em #ffffff;
+    }
+    12.5% {
+        box-shadow: 0em -3em 0em 0em #ffffff, 2em -2em 0 0.2em #ffffff, 3em 0em 0 0em #ffffff, 2em 2em 0 -0.5em #ffffff, 0em 3em 0 -0.5em #ffffff, -2em 2em 0 -0.5em #ffffff, -3em 0em 0 -0.5em #ffffff, -2em -2em 0 -0.5em #ffffff;
+    }
+    25% {
+        box-shadow: 0em -3em 0em -0.5em #ffffff, 2em -2em 0 0em #ffffff, 3em 0em 0 0.2em #ffffff, 2em 2em 0 0em #ffffff, 0em 3em 0 -0.5em #ffffff, -2em 2em 0 -0.5em #ffffff, -3em 0em 0 -0.5em #ffffff, -2em -2em 0 -0.5em #ffffff;
+    }
+    37.5% {
+        box-shadow: 0em -3em 0em -0.5em #ffffff, 2em -2em 0 -0.5em #ffffff, 3em 0em 0 0em #ffffff, 2em 2em 0 0.2em #ffffff, 0em 3em 0 0em #ffffff, -2em 2em 0 -0.5em #ffffff, -3em 0em 0 -0.5em #ffffff, -2em -2em 0 -0.5em #ffffff;
+    }
+    50% {
+        box-shadow: 0em -3em 0em -0.5em #ffffff, 2em -2em 0 -0.5em #ffffff, 3em 0em 0 -0.5em #ffffff, 2em 2em 0 0em #ffffff, 0em 3em 0 0.2em #ffffff, -2em 2em 0 0em #ffffff, -3em 0em 0 -0.5em #ffffff, -2em -2em 0 -0.5em #ffffff;
+    }
+    62.5% {
+        box-shadow: 0em -3em 0em -0.5em #ffffff, 2em -2em 0 -0.5em #ffffff, 3em 0em 0 -0.5em #ffffff, 2em 2em 0 -0.5em #ffffff, 0em 3em 0 0em #ffffff, -2em 2em 0 0.2em #ffffff, -3em 0em 0 0em #ffffff, -2em -2em 0 -0.5em #ffffff;
+    }
+    75% {
+        box-shadow: 0em -3em 0em -0.5em #ffffff, 2em -2em 0 -0.5em #ffffff, 3em 0em 0 -0.5em #ffffff, 2em 2em 0 -0.5em #ffffff, 0em 3em 0 -0.5em #ffffff, -2em 2em 0 0em #ffffff, -3em 0em 0 0.2em #ffffff, -2em -2em 0 0em #ffffff;
+    }
+    87.5% {
+        box-shadow: 0em -3em 0em 0em #ffffff, 2em -2em 0 -0.5em #ffffff, 3em 0em 0 -0.5em #ffffff, 2em 2em 0 -0.5em #ffffff, 0em 3em 0 -0.5em #ffffff, -2em 2em 0 0em #ffffff, -3em 0em 0 0em #ffffff, -2em -2em 0 0.2em #ffffff;
+    }
+}
+
+@keyframes ourpalm-loader {
+    0%,
+    100% {
+        box-shadow: 0em -3em 0em 0.2em #ffffff, 2em -2em 0 0em #ffffff, 3em 0em 0 -0.5em #ffffff, 2em 2em 0 -0.5em #ffffff, 0em 3em 0 -0.5em #ffffff, -2em 2em 0 -0.5em #ffffff, -3em 0em 0 -0.5em #ffffff, -2em -2em 0 0em #ffffff;
+    }
+    12.5% {
+        box-shadow: 0em -3em 0em 0em #ffffff, 2em -2em 0 0.2em #ffffff, 3em 0em 0 0em #ffffff, 2em 2em 0 -0.5em #ffffff, 0em 3em 0 -0.5em #ffffff, -2em 2em 0 -0.5em #ffffff, -3em 0em 0 -0.5em #ffffff, -2em -2em 0 -0.5em #ffffff;
+    }
+    25% {
+        box-shadow: 0em -3em 0em -0.5em #ffffff, 2em -2em 0 0em #ffffff, 3em 0em 0 0.2em #ffffff, 2em 2em 0 0em #ffffff, 0em 3em 0 -0.5em #ffffff, -2em 2em 0 -0.5em #ffffff, -3em 0em 0 -0.5em #ffffff, -2em -2em 0 -0.5em #ffffff;
+    }
+    37.5% {
+        box-shadow: 0em -3em 0em -0.5em #ffffff, 2em -2em 0 -0.5em #ffffff, 3em 0em 0 0em #ffffff, 2em 2em 0 0.2em #ffffff, 0em 3em 0 0em #ffffff, -2em 2em 0 -0.5em #ffffff, -3em 0em 0 -0.5em #ffffff, -2em -2em 0 -0.5em #ffffff;
+    }
+    50% {
+        box-shadow: 0em -3em 0em -0.5em #ffffff, 2em -2em 0 -0.5em #ffffff, 3em 0em 0 -0.5em #ffffff, 2em 2em 0 0em #ffffff, 0em 3em 0 0.2em #ffffff, -2em 2em 0 0em #ffffff, -3em 0em 0 -0.5em #ffffff, -2em -2em 0 -0.5em #ffffff;
+    }
+    62.5% {
+        box-shadow: 0em -3em 0em -0.5em #ffffff, 2em -2em 0 -0.5em #ffffff, 3em 0em 0 -0.5em #ffffff, 2em 2em 0 -0.5em #ffffff, 0em 3em 0 0em #ffffff, -2em 2em 0 0.2em #ffffff, -3em 0em 0 0em #ffffff, -2em -2em 0 -0.5em #ffffff;
+    }
+    75% {
+        box-shadow: 0em -3em 0em -0.5em #ffffff, 2em -2em 0 -0.5em #ffffff, 3em 0em 0 -0.5em #ffffff, 2em 2em 0 -0.5em #ffffff, 0em 3em 0 -0.5em #ffffff, -2em 2em 0 0em #ffffff, -3em 0em 0 0.2em #ffffff, -2em -2em 0 0em #ffffff;
+    }
+    87.5% {
+        box-shadow: 0em -3em 0em 0em #ffffff, 2em -2em 0 -0.5em #ffffff, 3em 0em 0 -0.5em #ffffff, 2em 2em 0 -0.5em #ffffff, 0em 3em 0 -0.5em #ffffff, -2em 2em 0 0em #ffffff, -3em 0em 0 0em #ffffff, -2em -2em 0 0.2em #ffffff;
+    }
+}

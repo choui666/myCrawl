@@ -1,0 +1,25 @@
+<div class="fm" style="background-image:url(http://content.gamebean.com/image/sdk/new/bg.jpg);">
+    <div class="wrap loginPage fast-box" ng-controller="Login__BindPhoneController as vm">
+        <div class="title"><h1>{{'login_v10_key1' | translate}}<!--绑定手机让你的账号更安全--><span>Bind  Your  Phone</span></h1></div>
+        <!--<a class="r-close" href="#"><em></em></a>-->
+        <section class="verify-content-box">
+            <div class="form-item">
+                <div class="bindphone"><label><em></em><i>{{'login_v10_key2' | translate}}<!--手机号--></i></label><span><input type="number" class="input" ng-model="vm.phone"></span></div>
+            </div>
+            <div class="form-item">
+                <label class="icon-phone"></label>
+                <div class="input-box">
+                    <input type="text" class="input" placeholder="{{'login_v10_key3' | translate}}" ng-model="vm.captcha"><!--验证码-->
+                    <button class="code-btn {{ Global_$$_NotGetCaptcha ? 'disabled-btn' : ''}}" ng-disabled="Global_$$_NotGetCaptcha" ng-click="vm.getPhoneCaptcha();">
+                        <b ng-show="Global_$$_CaptchaTip" ng-bind="Global_$$_CaptchaTip"><!--获取验证码--></b>
+                        <b ng-show="!Global_$$_CaptchaTip">{{'login_v10_key4' | translate}}<!--获取验证码--></b>
+                    </button>
+                </div>
+            </div>
+            <div class="submit-btn-box">
+                <button class="complete-btn" ng-click="vm.bindPhone();">{{'login_v10_key5' | translate}}<!--完成--><i>OK</i></button>
+            </div>
+            <a href="javascript:void(0);" class="text" ng-if="LoginBindPhoneCtl_$$_ShowZBBD" ng-click="closeWebview_Login();">{{'login_v10_key6' | translate}}<!--暂不绑定--></a>
+        </section>
+    </div>
+</div>

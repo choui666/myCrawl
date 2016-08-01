@@ -1,0 +1,14 @@
+<div class="fm" style="background-image:url(http://content.gamebean.com/image/sdk/new/bg.jpg);">
+    <div class="interface-box" ng-controller="UCenter__MenuController as vm">
+        <a href="javascript:void(0);" class="agr-close" ourpalm-close-webview></a>
+        <div class="logo"></div>
+        <ul>
+            <li><a ng-click="vm.gotoIndex();"><img src="../../images/interface_icon01.png" alt=""/>{{'login_v32_key1' | translate}}<!--用户中心--></a></li>
+            <li><a ourpalm-goto="/question/question_index"><img src="../../images/interface_icon02.png" alt=""/>{{'login_v32_key2' | translate}}<!--我要提问--><em class="dot" ng-show="vm.status"></em></a></li>
+            <li><a ourpalm-goto="/ucenter/mine_message"><img src="../../images/interface_icon03.png" alt=""/>{{'login_v32_key3' | translate}}<!--我的消息--></a></li>
+            <li><a ng-click="vm.gotoBindPhone();"><img src="../../images/interface_icon04.png" alt=""/><em class="tj">{{'login_v32_key4' | translate}}<!--推荐--></em>{{'login_v32_key5' | translate}}<!--绑定手机--></a></li>
+            <li><a ng-click="toast('尚未开启,敬请期待!');"><img src="../../images/interface_icon05.png" alt=""/>{{'login_v32_key6' | translate}}<!--福利--></a></li>
+            <li><a ng-click="toast('尚未开启,敬请期待!');"><img src="../../images/interface_icon06.png" alt=""/>{{'login_v32_key7' | translate}}<!--兑换--></a></li>
+        </ul>
+    </div>
+</div>

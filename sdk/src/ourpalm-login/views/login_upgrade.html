@@ -1,0 +1,33 @@
+<div class="fm" style="background-image:url(http://content.gamebean.com/image/sdk/new/bg.jpg);">
+    <div class="wrap loginPage fast-box" ng-controller="Login__LoginUpgradeController as vm">
+        <div class="title"><h1>{{'login_v11_key1' | translate}}<!--升级为正式账号--><span>Update  Your  Account</span></h1></div>
+        <a class="back" href="javascript:void(0);" ng-if="LoginUpgradeCtl_$$_showBackBtn" ourpalm-back><em></em></a>
+        <a class="r-close" href="javascript:void(0);" ng-if="LoginUpgradeCtl_$$_showCloseBtn" ng-click="closeWebview_Login();"><em></em></a>
+        <section class="fast-content-box"><span class="h"></span>
+            <div class="form-item">
+                <label class="icon-my"></label>
+                <div class="input-box"><input ng-model="vm.account" type="text" class="input" placeholder="{{'login_v11_key2' | translate}}"><!--账号--><span ng-click="vm.clearAccount();" class="icon-delete"></span></div>
+            </div>
+            <div class="form-item">
+                <label class="icon-password"></label>
+                <div class="input-box">
+                    <input ng-show="!vm.isShowPassword" ng-model="vm.password" type="password" class="input" placeholder="{{'login_v11_key3' | translate}}"><!--请输入密码-->
+                    <input ng-show="vm.isShowPassword" ng-model="vm.password" type="text" class="input" placeholder="{{'login_v11_key3' | translate}}"><!--请输入密码-->
+                    <span ng-click="vm.toggleShowPassword();" class="pwd-mode {{vm.isShowPassword ? 'pwd-mode-open' : 'pwd-mode-close'}}"></span>
+                </div>
+            </div>
+            <div class="form-item">
+                <label class="icon-phone"></label>
+                <div class="input-box">
+                    <input ng-model="vm.phone" ng-change="vm.onPhoneChangedEvent();" type="number" class="input" placeholder="{{'login_v11_key4' | translate}}"><!--绑定手机让账号更安全-->
+                    <span class="bind-input"><input type="checkbox" ng-model="vm.isCheckPhone" ng-change="vm.onPhoneCheckboxChangedEvent();"></span>
+                </div>
+            </div>
+            <div class="agreement"><input type="checkbox" ng-model="vm.isCheckProtocol"><a ng-click="vm.gotoUserProtocol();">{{'login_v11_key5' | translate}}<!--同意掌趣用户注册协议--></a></div>
+            <div class="tips01"><span ourpalm-messager><em></em><!--请输入合法密码--></span></div>
+            <div class="submit-btn-box">
+                <button ng-click="vm.upgrade();" class="fast-btn">{{'login_v11_key6' | translate}}<!--升级--><i>UPDATE</i></button>
+            </div>
+        </section>
+    </div>
+</div>

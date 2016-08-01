@@ -1,0 +1,19 @@
+<div class="fm" style="background-image:url(http://content.gamebean.com/image/sdk/new/bg.jpg);">
+    <div class="list-wrap pay-box">
+        <!--顶部 start:-->
+        <header class="header"><h1><em></em>{{'v4_key1' | translate}}<!--支付中心--></h1><a href="javascript:void(0)" class="close" title="{{'v4_key2' | translate}}" ourpalm-close-webview></a></header>
+        <!--顶部 end-->
+        <!--支付成功 start:-->
+        <section class="paymode pay-tips-box">
+            <ul class="pay-order-info">
+                <li>{{goodsName}} <span class="f8">{{goodsPrice / 100 | currency:'RMB '}}</span></li>
+                <li>{{'v4_key4' | translate}}：<span class="af">{{'v4_key8' | translate}}<!--支付成功--></span></li>
+                <li>{{'v4_key3' | translate}}：<span class="black">{{orderNum}}</span></li>
+                <li>{{'v4_key5' | translate}}：<span class="black">{{payTime | date: 'yyyy-MM-dd HH:mm:ss'}}</span></li>
+            </ul>
+            <div class="pay-tips success"><em></em>{{'v4_key6' | translate}}<!--恭喜成功支付--><span class="f8">{{goodsPrice}}</span></div>
+            <!--支付成功 end-->
+            <div class="button-box"><input type="button" class="know-button" value="{{'v4_key7' | translate}}" ourpalm-close-webview></div>
+        </section>
+    </div>
+</div>

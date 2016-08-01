@@ -1,0 +1,37 @@
+<div class="fm" style="background-image:url(http://content.gamebean.com/image/sdk/new/bg.jpg);">
+    <div class="list-wrap service-box" ng-controller="Question__QuestionReplyController as vm">
+        <!--顶部 start:-->
+        <header class="header"><h1><em></em>{{'login_v20_key1' | translate}}<!--问题详情--></h1><a href="javascript:void(0)" class="back" ourpalm-back></a><a href="javascript:void(0)" class="close" ourpalm-close-webview></a></header>
+        <!--顶部 end-->
+        <section class="service-center-box myq-list">
+            <div class="ask-box">
+                <dl ng-repeat="reply in vm.replys" class="{{reply.replayType == '1' ? 'q': 'a'}}">
+                    <dt>
+                        <img ng-if="reply.replayType == '1'" src="../../images/ask_pic.png"/>
+                        <img ng-if="reply.replayType != '1'" src="../../images/ask_pic01.png"/>
+                    </dt>
+                    <dd>
+                        <div>
+                            <p>{{reply.detail}}</p>
+                            <p ng-if="reply.url1&&reply.replayType == '1'"><img ng-src="{{reply.url1}}" ourpalm-picture-box-src="{{reply.url1}}"></p>
+                            <p ng-if="reply.url2&&reply.replayType == '1'"><img ng-src="{{reply.url2}}" ourpalm-picture-box-src="{{reply.url2}}"></p>
+                            <p class="date">{{reply.replayTime}}</p>
+                        </div>
+                    </dd>
+                </dl>
+                <!--<dl class="q">
+                    <dt><img src="http://content.gamebean.com/image/sdk/new/ask_pic.png" alt=""/></dt>
+                    <dd>
+                        <div>
+                            <P><img src="http://content.gamebean.com/image/sdk/new/ask_pic.png" ourpalm-picture-box-src="http://content.gamebean.com/image/sdk/new/ask_pic.png"/>
+                            <img src="http://content.gamebean.com/image/sdk/new/ask_pic.png" ng-click="vm.zoomInPic('http://content.gamebean.com/image/sdk/new/ask_pic.png');"/></P>
+                            <p class="date">2016-05-02 22：30</p>
+                        </div>
+                    </dd>
+                </dl>-->
+            </div>
+            <div class="ask-button-box" ng-show="vm.qStatus != '3'"><a ourpalm-goto="/question/question_append/{{vm.questionId}}" class="btn1">{{'login_v20_key2' | translate}}<!--不满意，追加问题--></a><a ourpalm-goto="/question/question_evaluation/{{vm.questionId}}" class="btn2">{{'login_v20_key3' | translate}}<!--满意，关闭问题--></a></div>
+        </section>
+    </div>
+</div>
+<ourpalm-picture-box></ourpalm-picture-box>

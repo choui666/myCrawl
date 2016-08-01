@@ -1,0 +1,21 @@
+<div class="fm" style="background-image:url(http://content.gamebean.com/image/sdk/new/bg.jpg);">
+    <div class="list-wrap service-box" ng-controller="Question__MyQuestionController as vm">
+        <!--顶部 start:-->
+        <header class="header"><h1><em></em>{{'login_v23_key1' | translate}}<!--我的问题--></h1><a href="javascript:void(0)" class="back" ourpalm-goto="/question/question_index"></a><a href="javascript:void(0)" class="close" ourpalm-close-webview></a></header>
+        <!--顶部 end-->
+        <section class="service-center-box myq-list">
+            <ul>
+                <li ng-repeat="question in vm.questions" ng-click="vm.gotoQuestionReply($index);">
+                    <a><em>{{question.qName}}</em></a>
+                    <span ng-if="question.qStatus == '1'" class="btn-n">{{'login_v23_key2' | translate}}<!--待回复--></span>
+                    <span ng-if="question.qStatus == '2'" class="btn-y">{{'login_v23_key3' | translate}}<!--已回复--></span>
+                    <span ng-if="question.qStatus == '3'" class="btn-n">{{'login_v23_key4' | translate}}<!--已关闭--></span>
+                    <P class="time">{{question.cTime}}</P>
+                </li>
+                <!--<li><a href="#"><em></em>【游戏攻略】手游预约礼包！ </a><span class="btn-y">已回复</span>-->
+                <!--<P class="time">2016-05-02 22：30</P></li>-->
+            </ul>
+            <a class="side-ask" ourpalm-goto="/question/question_ask"><em></em><span>{{'login_v23_key5' | translate}}<!--我要提问--></span></a>
+        </section>
+    </div>
+</div>

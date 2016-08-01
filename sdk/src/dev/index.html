@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="oppage-usetype" content="sdk2.0">
+    <title translate="title"></title>
+
+    <link rel="stylesheet" href="../common/directive.css"/>
+    <link rel="stylesheet" href="../common/layout.css"/>
+
+    <script type="text/javascript" src="http://content.gamebean.com/js/jquery/jquery.1.7.2.js"></script>
+    <script type="text/javascript" src="http://content.gamebean.com/js/developer/debug/pageBridgeInit.js?v=222"></script>
+    <!--<script src="http://jsconsole.com/js/remote.js?288f57be-50a8-4a3d-a613-4d8f97661dd4"></script>-->
+</head>
+<body>
+
+<ourpalm-input-focus></ourpalm-input-focus>
+<ourpalm-textarea-focus></ourpalm-textarea-focus>
+<ourpalm-loading></ourpalm-loading>
+<ourpalm-toast></ourpalm-toast>
+
+<div ng-controller="PageController" class="fm">
+    <div ng-view></div>
+</div>
+
+<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="../bower_components/angular-route/angular-route.js"></script>
+<script type="text/javascript" src="../bower_components/angular-animate/angular-animate.js"></script>
+<script type="text/javascript" src="../bower_components/angular-base64/angular-base64.js"></script>
+<script type="text/javascript" src="../bower_components/angular-translate/angular-translate.js"></script>
+<script type="text/javascript" src="../bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+<script type="text/javascript" src="../bower_components/angular-cookies/angular-cookies.js"></script>
+<script type="text/javascript" src="../bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+<script type="text/javascript" src="../bower_components/angular-translate-storage-local/angular-translate-storage-local.js"></script>
+
+<script type="text/javascript" src="../ourpalm-util/ourpalm-util.js"></script>
+<script type="text/javascript" src="../ourpalm-util-http/ourpalm-util-http.js"></script>
+
+<script type="text/javascript" src="../ourpalm-login/services/ourpalm-service-login.js"></script>
+<script type="text/javascript" src="../ourpalm-question/services/ourpalm-service-question.js"></script>
+<script type="text/javascript" src="../ourpalm-ucenter/services/ourpalm-service-ucenter.js"></script>
+<script type="text/javascript" src="../ourpalm-pcenter/services/ourpalm-service-pcenter.js"></script>
+
+<script type="text/javascript" src="route.js"></script>
+<script type="text/javascript" src="../ourpalm-login/controllers/ourpalm-controller-login.js"></script>
+<script type="text/javascript" src="../ourpalm-question/controllers/ourpalm-controller-question.js"></script>
+<script type="text/javascript" src="../ourpalm-ucenter/controllers/ourpalm-controller-ucenter.js"></script>
+<script type="text/javascript" src="../ourpalm-pcenter/controllers/ourpalm-controller-pcenter.js"></script>
+<script type="text/javascript" src="../ourpalm-pcenter/directives/ourpalm-directive-pcenter.js"></script>
+
+
+<script type="text/javascript">
+    angular.bootstrap(document, ['ourpalm-app']);
+</script>
+
+</body>
+</html>

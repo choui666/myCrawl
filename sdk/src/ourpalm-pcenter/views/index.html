@@ -1,0 +1,34 @@
+<div>
+    <div class="fm" style="background-image:url(http://content.gamebean.com/image/sdk/new/bg.jpg);" ng-controller="PCenter_TopController as vm">
+        <div class="list-wrap pay-box">
+            <!--顶部 start:-->
+            <header class="header">
+                <h1><em></em><span translate="v1_key1"><!--支付中心--></span></h1>
+                <a href="javascript:void(0)" class="close" title="{{'v1_key3' | translate}}<!--关闭-->" ourpalm-close-webview></a>
+            </header>
+            <!--顶部 end-->
+            <section class="pay-order-info pay-info">
+                <li><!--商品名称-->{{'v1_key14' | translate}}：{{goodsName}}</li>
+                <li><!--应付金额-->{{'v1_key15' | translate}}：<em class="price af">{{goodsPrice / 100 | currency:'RMB '}}</em></li>
+                <li class="last">{{'v1_key4' | translate}}<!--订单号-->：<span class="f8">{{orderNum}}</span></li>
+                <span class="arrow{{vm.showDetail ? ' up' : ''}}" ng-click="vm.toggleShowDetail();"></span>
+            </section>
+            <!--选择支付方式 start:-->
+            <section class="paymode{{vm.showDetail ? ' shrink-paymode' : ''}}">
+                <div class="choice-box">
+                    <h2 translate="v1_key5"><!--支付方式--></h2>
+                    <ul>
+                        <weixin-web-pay></weixin-web-pay>
+                        <wang-yin-pay></wang-yin-pay>
+                        <zhifubao-wap-pay></zhifubao-wap-pay>
+                        <zhifubao-sdk-pay></zhifubao-sdk-pay>
+                        <mo9-pay></mo9-pay>
+                        <phone-card-pay></phone-card-pay>
+                        <!--<li><a href="#/phone"><img src="http://content.gamebean.com/image/sdk/new/pay_icon05.png"/><span translate="v1_key12">&lt;!&ndash;充值卡支付&ndash;&gt;</span></a></li>-->
+                    </ul>
+                </div>
+            </section>
+            <!--选择支付方式 end-->
+        </div>
+    </div>
+</div>
