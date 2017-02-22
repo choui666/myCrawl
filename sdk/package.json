@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "http-server -a 0.0.0.0 -p 8000 -c-1 ./src",
-    "start": "webpack-dev-server --progress --colors --host 0.0.0.0 --port 8000 --inline --content-base src/",
+    "start": "webpack-dev-server  --https --progress --colors --host 0.0.0.0 --port 8000 --inline --content-base src/",
+    "dist": "webpack --config webpack.dist.js",
     "webpack": "webpack --profile --display-modules --colors"
   },
   "keywords": [
@@ -15,28 +16,30 @@
   "author": "lsc",
   "license": "ISC",
   "dependencies": {
-    "angular": "^1.5.7",
-    "angular-animate": "^1.5.7",
-    "angular-base64": "^2.0.5",
-    "angular-cookies": "^1.5.7",
-    "angular-route": "^1.5.7",
-    "angular-translate": "^2.11.0",
-    "angular-translate-loader-static-files": "^2.11.0",
-    "angular-translate-storage-cookie": "^2.11.0",
-    "angular-translate-storage-local": "^2.11.0",
-    "fastclick": "^1.0.6",
-    "jquery": "^1.11.3"
+    "angular": "1.5.7",
+    "angular-animate": "1.5.7",
+    "angular-base64": "2.0.5",
+    "angular-cookies": "1.5.7",
+    "angular-route": "1.5.7",
+    "angular-translate": "2.11.0",
+    "angular-translate-loader-static-files": "2.11.0",
+    "angular-translate-storage-cookie": "2.11.0",
+    "angular-translate-storage-local": "2.11.0",
+    "fastclick": "1.0.6",
+    "hammerjs": "2.0.8",
+    "jquery": "1.11.3"
   },
   "devDependencies": {
-    "bower": "^1.7.9",
-    "css-loader": "^0.23.1",
-    "file-loader": "^0.9.0",
-    "html-loader": "^0.4.3",
-    "html-minifier": "^3.0.1",
-    "http-server": "^0.9.0",
-    "style-loader": "^0.13.1",
-    "url-loader": "^0.5.7",
-    "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
+    "bower": "1.7.9",
+    "css-loader": "0.23.1",
+    "file-loader": "0.9.0",
+    "html-loader": "0.4.3",
+    "html-minifier": "3.0.1",
+    "http-server": "0.9.0",
+    "style-loader": "0.13.1",
+    "url-loader": "0.5.7",
+    "webpack": "1.13.1",
+    "ng-annotate-webpack-plugin": "0.1.3",
+    "webpack-dev-server": "1.14.1"
   }
 }
