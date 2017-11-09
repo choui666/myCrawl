@@ -1,3 +1,4 @@
 node_mmodules/
 buld/
 .idea/
+./ormconfig.json
