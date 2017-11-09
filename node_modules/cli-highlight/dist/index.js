@@ -1,0 +1,61 @@
+"use strict";
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+var hljs = require('highlight.js');
+var he = require('he');
+var theme_1 = require('./theme');
+function colorize(code, theme) {
+    if (theme === void 0) { theme = {}; }
+    return he.decode(code.replace(/<span class="hljs-(\w+)">([^<]+)<\/span>/g, function (match, token, value) {
+        return (theme[token] || theme_1.DEFAULT_THEME[token] || theme_1.plain)(value);
+    }));
+}
+/**
+ * Apply syntax highlighting to `code` with ASCII color codes. The language is automatically
+ * detected if not set.
+ *
+ * ```ts
+ * import {highlight} from 'cli-highlight';
+ * import * as fs from 'fs';
+ *
+ * fs.readFile('package.json', 'utf8', (err: any, json: string) => {
+ *     console.log('package.json:');
+ *     console.log(highlight(json));
+ * });
+ * ```
+ *
+ * @param code The code to highlight
+ * @param options Optional options
+ */
+function highlight(code, options) {
+    if (options === void 0) { options = {}; }
+    var html;
+    if (options.language) {
+        html = hljs.highlight(options.language, code, options.ignoreIllegals, options.continuation).value;
+    }
+    else {
+        html = hljs.highlightAuto(code, options.languageSubset).value;
+    }
+    return colorize(html, options.theme);
+}
+exports.highlight = highlight;
+/**
+ * Returns all supported languages
+ */
+function listLanguages() {
+    return hljs.listLanguages();
+}
+exports.listLanguages = listLanguages;
+/**
+ * Returns true if the language is supported
+ * @param name A language name, alias or file extension
+ */
+function supportsLanguage(name) {
+    return !!hljs.getLanguage(name);
+}
+exports.supportsLanguage = supportsLanguage;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = highlight;
+__export(require('./theme'));
+//# sourceMappingURL=index.js.map
