@@ -1,0 +1,20 @@
+<div class="fm" style="background-image:url(http://content.gamebean.com/image/sdk/new/bg.jpg);">
+    <div class="list-wrap service-box" ng-controller="Question__IndexController as vm">
+        <!--顶部 start:-->
+        <header class="header"><h1><em></em>{{'login_v22_key1' | translate}}<!--客服中心--></h1><a href="javascript:void(0)" class="back" ourpalm-goto="/ucenter/menu"></a><a href="javascript:void(0)" class="close" ourpalm-close-webview></a></header>
+        <!--顶部 end-->
+        <section class="service-center-box">
+            <div class="service-btn-box">
+                <a ourpalm-goto="/question/question_mine" class="myq-btn l"><span><b><em></em><i ng-show="vm.status" class="t-icon"></i></b>{{'login_v22_key2' | translate}}<!--我的问题--><i>MY QUESTION</i></span></a>
+                <a ourpalm-goto="/question/question_ask" class="ask-btn r"><span><em></em>{{'login_v22_key3' | translate}}<!--我要提问--><i>ASK QUESTION</i></span></a>
+            </div>
+            <div class="service-pro-list">
+                <div class="list" style="top:0;">
+                    <ul>
+                        <li ng-repeat="question in vm.questions"><a href="#/question/question_type/{{question.categoryId}}/{{question.catetoryRelation}}"><em></em>【{{question.categoryName}}】</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

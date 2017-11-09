@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="SvnBranchConfigurationManager">
+    <option name="myConfigurationMap">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchUrls">
+                <list>
+                  <option value="http://platform.intra.gamebean.net/svn/managementsystem/platform-web/plarform-sdk2.0-ui/plarform-sdk2.0-ui/branches" />
+                  <option value="http://platform.intra.gamebean.net/svn/managementsystem/platform-web/plarform-sdk2.0-ui/plarform-sdk2.0-ui/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="http://platform.intra.gamebean.net/svn/managementsystem/platform-web/plarform-sdk2.0-ui/plarform-sdk2.0-ui/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="mySupportsUserInfoFilter" value="true" />
+  </component>
+</project>

@@ -1,0 +1,32 @@
+"use strict";
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var assert = require('assert');
+var index_1 = require('../index');
+var c = require('chalk');
+var HighlightAssertionError = (function (_super) {
+    __extends(HighlightAssertionError, _super);
+    function HighlightAssertionError(actual, expected) {
+        _super.call(this, { actual: actual, expected: expected });
+        this.message = '';
+        this.name = '';
+    }
+    return HighlightAssertionError;
+}(assert.AssertionError));
+function test(language, code, expected) {
+    it("should color " + language + " correctly", function () {
+        var highlighted = index_1.highlight(code);
+        if (highlighted.trim() !== expected.trim()) {
+            throw new HighlightAssertionError(highlighted, expected);
+        }
+        else {
+            console.log(highlighted + '\n');
+        }
+    });
+}
+test('SQL', "\n    -- Create a table\n    CREATE TABLE \"topic\" (\n        \"id\" serial NOT NULL PRIMARY KEY,\n        \"forum_id\" integer NOT NULL,\n        \"subject\" varchar(255) NOT NULL\n    );\n", "\n    " + c.green('-- Create a table') + "\n    " + c.blue('CREATE') + " " + c.blue('TABLE') + " " + c.red('"topic"') + " (\n        " + c.red('"id"') + " " + c.cyan('serial') + " " + c.blue('NOT') + " " + c.blue('NULL') + " PRIMARY " + c.blue('KEY') + ",\n        " + c.red('"forum_id"') + " " + c.cyan('integer') + " " + c.blue('NOT') + " " + c.blue('NULL') + ",\n        " + c.red('"subject"') + " " + c.cyan('varchar') + "(" + c.green('255') + ") " + c.blue('NOT') + " " + c.blue('NULL') + "\n    );\n");
+test('JSON', "\n    [\n        {\n            \"title\": \"apples\",\n            \"count\": [12000, 20000],\n            \"description\": {\"text\": \"...\", \"sensitive\": false}\n        }\n    ]\n", "\n    [\n        {\n            " + c.cyan('"title"') + ": " + c.red('"apples"') + ",\n            " + c.cyan('"count"') + ": [" + c.green('12000') + ", " + c.green('20000') + "],\n            " + c.cyan('"description"') + ": {" + c.cyan('"text"') + ": " + c.red('"..."') + ", " + c.cyan('"sensitive"') + ": " + c.blue('false') + "}\n        }\n    ]\n");
+//# sourceMappingURL=test.js.map
