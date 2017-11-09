@@ -1,0 +1,2 @@
+# myCrawl
+typeOrm koa typescrpt
