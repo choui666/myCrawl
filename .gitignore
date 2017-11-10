@@ -1,4 +1,4 @@
-node_mmodules/
-buld/
+node_modules/
+build/
 .idea/
 ./ormconfig.json
