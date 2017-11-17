@@ -11,7 +11,6 @@ import cors =  require("koa-cors");
 
 
 
-
 createConnection().then(async connection => {
     Logger.log('typeorm connected');
     startCrawl(connection);
