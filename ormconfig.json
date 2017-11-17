@@ -2,13 +2,13 @@
    "type": "mariadb",
    "host": "45.76.203.131",
    "port": 3306,
-   "username": "****",
-   "password": "****",
-   "database": "****",
+   "username": "choui",
+   "password": "zqkj0080",
+   "database": "test",
    "synchronize": true,
    "logging": false,
    "entities": [
-      "build/src/entity/**/*.js"
+      "src/entity/**/*.ts"
    ],
    "migrations": [
       "src/migration/**/*.ts"

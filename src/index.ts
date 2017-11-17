@@ -7,9 +7,7 @@ import { router } from "./router";
 import { startCrawl } from "./task";
 import { Logger } from './util/logger';
 import { createConnection } from 'typeorm';
-import *as moment from 'moment';
-import *as Router from 'koa-router';
- import cors =  require("koa-cors");
+import cors =  require("koa-cors");
 
 
 
@@ -21,10 +19,4 @@ createConnection().then(async connection => {
     app.use(cors());
     app.use(router.routes());
     app.listen(3000);
-}).catch(error => console.log(error));
-
-
-
-
-
-
+}).catch(error => console.log(error)); 
