@@ -4,17 +4,21 @@
    "port": 3306,
    "username": "choui",
    "password": "zqkj0080",
-   "database": "test",
+   "database": "db001",
    "synchronize": true,
    "logging": false,
+   "this is local entities test":"src/entity/**/*.ts",
+   "this is production entities test":"build/src/entity/**/*.js",
    "entities": [
       "src/entity/**/*.ts"
    ],
-   "migrations": [
-      "src/migration/**/*.ts"
+   "this is local migrations test":"src/migration/**/*.ts",
+   "migrations": [ 
+      "build/migration/entity/**/*.js"
    ],
-   "subscribers": [
-      "src/subscriber/**/*.ts"
+   "this is local subscribers test":"src/subscriber/**/*.ts",
+   "subscribers": [ 
+      "build/src/subscriber/**/*.js"
    ],
    "cli": {
       "entitiesDir": "src/entity",
