@@ -125,7 +125,7 @@ export class oldHouses {
                     resolve(maxPages);
                 } else {
                     Logger.error('网络异常--maxPage');
-                    reject(0);
+                    resolve(0);
                 }
             })
         })

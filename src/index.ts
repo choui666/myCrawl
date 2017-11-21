@@ -24,6 +24,18 @@ createConnection().then(async connection => {
 
 
     const app = new koa(); 
+    //全局错误处理
+    app.use(async (ctx, next) => {
+        try {
+          await next();
+        } catch (err) {
+          // will only respond with JSON
+          ctx.status = err.statusCode || err.status || 500;
+          ctx.body = {
+            message: err.message
+          };
+        }
+      })
     app.use(cors());
     app.use(router.routes());
     app.listen(3003);

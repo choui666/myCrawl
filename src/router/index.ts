@@ -31,7 +31,16 @@ export const routes:route[]  =  [
         path:"/news",
         method:"get",
         action:cityCtr.getNews
-    },
+    },{
+        path:"/totalPriceGroup",
+        method:"get",
+        action:cityCtr.getCountGroupbyTotalPrice
+    }, {
+        path:"/avaragePriceGroup",
+        method:"get",
+        action:cityCtr.getCountGroupbyAvaragePrice
+    }, 
+    
 ];
 
 export let router:Router = new   Router(); 
