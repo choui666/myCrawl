@@ -21,15 +21,15 @@ export class Citys {
                     var $ = cheerio.load(body);
                     var leftCitys = $('.fl.citys-l a'), rightCitys = $('.fl.citys-r a'), result:{href:string,name:string}[] = [];
 
-
+                    
                     leftCitys.each(function () {
-                        result.push({
+                        $(this).attr('href').indexOf('you.lianjia.com')<0&&result.push({
                             href: $(this).attr('href'),
                             name: $(this).text()
                         })
                     });
                     rightCitys.each(function () {
-                        result.push({
+                        $(this).attr('href').indexOf('you.lianjia.com')<0&&result.push({
                             href: $(this).attr('href'),
                             name: $(this).text()
                         })
@@ -52,7 +52,7 @@ export class Citys {
             .into(City)
             .values(citys)
             .execute();
-        console.log(result);
+            return result;
     }
 
 

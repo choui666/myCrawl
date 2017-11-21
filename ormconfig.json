@@ -1,10 +1,10 @@
 {
    "type": "mariadb",
-   "host": "45.76.203.131",
+   "host": "45.32.125.232",
    "port": 3306,
    "username": "choui",
    "password": "zqkj0080",
-   "database": "db001",
+   "database": "test",
    "synchronize": true,
    "logging": false,
    "this is local entities test":"src/entity/**/*.ts",

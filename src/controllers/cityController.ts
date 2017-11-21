@@ -11,8 +11,13 @@ export class cityController {
 
     }
 
-    getCitys = async (ctx: koa.Context) => {
-        console.log(this);
+
+    getNews = async  (ctx: koa.Context) => {
+        let news = await this.service.getNews();
+        ctx.body = news;
+    }
+
+    getCitys = async (ctx: koa.Context) => { 
         let citys = await this.service.getCitys();
         ctx.body = citys;
     }

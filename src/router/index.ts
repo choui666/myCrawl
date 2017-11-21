@@ -27,7 +27,11 @@ export const routes:route[]  =  [
         path:"/citys",
         method:"get",
         action:cityCtr.getCitys
-    }
+    }, {
+        path:"/news",
+        method:"get",
+        action:cityCtr.getNews
+    },
 ];
 
 export let router:Router = new   Router(); 
