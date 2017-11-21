@@ -39,7 +39,13 @@ export const routes:route[]  =  [
         path:"/avaragePriceGroup",
         method:"get",
         action:cityCtr.getCountGroupbyAvaragePrice
+    }, {
+        path:"/squareGroup",
+        method:"get",
+        action:cityCtr.getCountGroupbySquare
     }, 
+
+    
     
 ];
 

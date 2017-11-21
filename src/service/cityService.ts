@@ -131,33 +131,33 @@ export class cityService {
             300000: 0
         }
         for (let house of houseList) {
-            if (house.totalPrice < 5000) {
+            if (house.averagePrice < 5000) {
                 ++resultMap[5000];
-            } else if (house.totalPrice < 10000) {
+            } else if (house.averagePrice < 10000) {
                 ++resultMap[10000];
             }
-            else if (house.totalPrice < 15000) { ++resultMap[15000]; }
-            else if (house.totalPrice < 20000) { ++resultMap[20000]; }
-            else if (house.totalPrice < 25000) { ++resultMap[25000]; }
-            else if (house.totalPrice < 30000) { ++resultMap[30000]; }
-            else if (house.totalPrice < 35000) { ++resultMap[35000]; }
-            else if (house.totalPrice < 40000) { ++resultMap[40000]; }
-            else if (house.totalPrice < 45000) { ++resultMap[45000]; }
-            else if (house.totalPrice < 50000) { ++resultMap[50000]; }
-            else if (house.totalPrice < 55000) { ++resultMap[55000]; }
-            else if (house.totalPrice < 60000) { ++resultMap[60000]; }
-            else if (house.totalPrice < 65000) { ++resultMap[65000]; }
-            else if (house.totalPrice < 70000) { ++resultMap[70000]; }
-            else if (house.totalPrice < 75000) { ++resultMap[75000]; }
-            else if (house.totalPrice < 80000) { ++resultMap[80000]; }
-            else if (house.totalPrice < 85000) { ++resultMap[85000]; }
-            else if (house.totalPrice < 90000) { ++resultMap[90000]; }
-            else if (house.totalPrice < 95000) { ++resultMap[95000]; }
-            else if (house.totalPrice < 100000) { ++resultMap[100000]; }
-            else if (house.totalPrice < 120000) { ++resultMap[120000]; }
-            else if (house.totalPrice < 140000) { ++resultMap[140000]; }
-            else if (house.totalPrice < 160000) { ++resultMap[160000]; }
-            else if (house.totalPrice < 200000) { ++resultMap[200000]; }
+            else if (house.averagePrice < 15000) { ++resultMap[15000]; }
+            else if (house.averagePrice < 20000) { ++resultMap[20000]; }
+            else if (house.averagePrice < 25000) { ++resultMap[25000]; }
+            else if (house.averagePrice < 30000) { ++resultMap[30000]; }
+            else if (house.averagePrice < 35000) { ++resultMap[35000]; }
+            else if (house.averagePrice < 40000) { ++resultMap[40000]; }
+            else if (house.averagePrice < 45000) { ++resultMap[45000]; }
+            else if (house.averagePrice < 50000) { ++resultMap[50000]; }
+            else if (house.averagePrice < 55000) { ++resultMap[55000]; }
+            else if (house.averagePrice < 60000) { ++resultMap[60000]; }
+            else if (house.averagePrice < 65000) { ++resultMap[65000]; }
+            else if (house.averagePrice < 70000) { ++resultMap[70000]; }
+            else if (house.averagePrice < 75000) { ++resultMap[75000]; }
+            else if (house.averagePrice < 80000) { ++resultMap[80000]; }
+            else if (house.averagePrice < 85000) { ++resultMap[85000]; }
+            else if (house.averagePrice < 90000) { ++resultMap[90000]; }
+            else if (house.averagePrice < 95000) { ++resultMap[95000]; }
+            else if (house.averagePrice < 100000) { ++resultMap[100000]; }
+            else if (house.averagePrice < 120000) { ++resultMap[120000]; }
+            else if (house.averagePrice < 140000) { ++resultMap[140000]; }
+            else if (house.averagePrice < 160000) { ++resultMap[160000]; }
+            else if (house.averagePrice < 200000) { ++resultMap[200000]; }
             else {
                 ++resultMap[300000]
             }
@@ -167,5 +167,51 @@ export class cityService {
         }
         return resultMap;
     }
+
+    async getCountGroupbySquare(cityId: string): Promise<{ [index: number]: number }> {
+        let houseList = await this.dao.getLatestHouseList(cityId);
+        let resultMap = {
+            20: 0,
+            30: 0,
+            40: 0,
+            50: 0,
+            60: 0,
+            70: 0,
+            80: 0,
+            90: 0,
+            100: 0,
+            110: 0,
+            120: 0,
+            150: 0,
+            200: 0,
+            250: 0,
+            300: 0,
+            500: 0
+        }
+        for (let house of houseList) { 
+            if (house.square < 20) {                 ++resultMap[20];             }
+            else if (house.square < 30) {                 ++resultMap[30];             }
+            else if (house.square < 40) {                 ++resultMap[40];             }
+            else if (house.square < 50) {                 ++resultMap[50];             }
+            else if (house.square < 60) {                 ++resultMap[60];             }
+            else if (house.square < 70) {                 ++resultMap[70];             }
+            else if (house.square < 80) {                 ++resultMap[80];             }
+            else if (house.square < 90) {                 ++resultMap[90];             }
+            else if (house.square < 100) {                 ++resultMap[100];             }
+            else if (house.square < 110) {                 ++resultMap[110];             }
+            else if (house.square < 120) {                 ++resultMap[120];             }
+            else if (house.square < 150) {                 ++resultMap[150];             }
+            else if (house.square < 200) {                 ++resultMap[200];             }
+            else if (house.square < 250) {                 ++resultMap[250];             }
+            else if (house.square < 300) {                 ++resultMap[300];             }
+            else{
+                ++resultMap[500];    
+            }
+
+
+        }
+        return resultMap;
+    }
+     
 
 } 

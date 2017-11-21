@@ -26,6 +26,13 @@ export class cityController {
         ctx.body = result
     }
 
+    getCountGroupbySquare = async (ctx: koa.Context) => {
+        let cityId = ctx.query['cityId']; 
+        !cityId&&ctx.throw('城市ID不能为空');
+        let result = await this.service.getCountGroupbySquare(cityId);
+        ctx.body = result
+    }
+
     getNews = async (ctx: koa.Context) => {
         let news = await this.service.getNews();
         ctx.body = news;
