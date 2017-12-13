@@ -15,6 +15,9 @@ export class News {
     @Column()
     href: string;
 
+    @Column()
+    cityId: number;
+
     @CreateDateColumn()
     createTime: Date;
 
