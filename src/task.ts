@@ -47,9 +47,9 @@ export const startCrawlNews =   (connection: Connection) => {
 export const startCrawlNewsByPup =  async (connection: Connection) => {
     scheduleJob({ 
         dayOfWeek: [0,1,2,3,4,5,6] ,
-        hour:2,
-        minute:57,
-        second:0
+        hour:17,
+        minute:16,
+        second:30
        }, async () => {
         Logger.log(moment.now(), 'start crwal news data.... ');
         let citys = await new Citys().getCitysFromDataBase();

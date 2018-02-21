@@ -1,4 +1,4 @@
-import { cityService } from '../service/cityService';
+import { cityService } from './cityService';
 import * as koa from 'koa';
 import { Injectable, Inject } from 'container-ioc';
 

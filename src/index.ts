@@ -10,15 +10,14 @@ import { createConnection } from 'typeorm';
 import cors =  require("koa-cors");
 import  * as http from "http";
 import  * as https from "https"; 
-import * as fs from "fs";
+import * as fs from "fs"; 
+const koaBody = require('koa-body');
 
 console.log('start app!');
 
+
 createConnection().then(async connection => { 
-    console.log('connected app!');
-
-    
-
+    console.log('connected app!'); 
     //task任务开启
     //startCrawlCitys(connection);
     startCrawlOldHouse(connection); 
@@ -29,15 +28,21 @@ createConnection().then(async connection => {
     app.use(async (ctx, next) => {
         try {
           await next();
+          ctx.body = {
+             status:'0',
+             data:ctx.body
+          }
         } catch (err) {
           // will only respond with JSON
           ctx.status = err.statusCode || err.status || 500;
           ctx.body = {
-            message: err.message
+            status:'1',
+            desc: err.message
           };
         }
       })
     app.use(cors());
+    app.use(koaBody());
     app.use(router.routes());
     app.listen(3003);
      

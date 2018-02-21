@@ -6,7 +6,7 @@
    "password": "zqkj0080",
    "database": "test",
    "synchronize": true,
-   "logging": false,
+   "logging": true,
    "this is local entities test":"src/entity/**/*.ts",
    "this is production entities test":"build/src/entity/**/*.js",
    "entities": [

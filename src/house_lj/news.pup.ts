@@ -20,16 +20,18 @@ export interface NEWS {
 
 export class NewsTaskByPup {
   
+     pointer = 0;
+
     constructor(private connection: Connection,private citys: City[] ) {
         Logger.switch = true;
     }
 
 
 
-    async startByCity(browser: Browser, city: City): Promise<NEWS[]> {
+    async startByCity(browser: Browser, city: City)  {
         let page: Page = await browser.newPage();
         let url = `http://news.baidu.com/ns?word=${city.name}房价&tn=news&from=news&cl=2&rn=20&ct=1`;
-        let response: Response = await page.goto(url,{timeout:60000});
+        let response: Response = await page.goto(url);
         let body = await response.text();
         let $: CheerioSelector = cheerio.load(body);
         let citys_dom: Cheerio = $('#content_left div.result');
@@ -43,7 +45,14 @@ export class NewsTaskByPup {
             };
             newsList.push(entity);
         }
-        return newsList;
+        let result = await this.saveNews(newsList);
+        this.pointer++;
+        if(this.citys&&this.citys.length>this.pointer){
+            this.startByCity(browser,this.citys[this.pointer]);
+        }else{
+            this.pointer = 0;
+            browser.close(); 
+        }
     }
 
 
@@ -59,23 +68,13 @@ export class NewsTaskByPup {
     async start() {
         let browser: Browser = await launch({ headless: true ,timeout: 0});
         try {
-            let promiseArr:any[] = this.citys.map( item => {
-                return new Promise(async(resolve,reject)=>{
-                    let arr = await this.startByCity(browser, item);
-                    console.log(item.name, arr); 
-                   resolve(arr);
-                }) 
-            });
-             
-            Promise.all(promiseArr).then(async(arr)=>{
-                console.log('result',arr);
-                let result = await this.saveNews(arr);
-                browser.close();
-            }); 
+            this.startByCity(browser,this.citys[this.pointer]); 
         } catch (error) {
             browser.close();
         }
         
     }
+
+    
 }
  

@@ -1,4 +1,4 @@
-import { cityDao } from '../dao/city';
+import { cityDao } from './cityDao';
 import { City } from '../entity/city';
 import { Injectable, Inject } from 'container-ioc';
 import { News } from '../entity/News';
@@ -6,9 +6,7 @@ import { House } from '../entity/House';
 
 @Injectable()
 export class cityService {
-
-
-
+ 
     constructor( @Inject(cityDao) private dao: cityDao) {
 
     }
