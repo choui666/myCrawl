@@ -44,7 +44,9 @@ export class BlogService {
     }
 
     async getTag(label: string) {
+        console.log('service getTag');
         let result = await this.dao.getTag(label);
+        console.log('service getTag result');
         return result;
     }
 

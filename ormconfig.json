@@ -10,7 +10,7 @@
    "this is local entities test":"src/entity/**/*.ts",
    "this is production entities test":"build/src/entity/**/*.js",
    "entities": [
-      "src/entity/**/*.ts"
+    "src/entity/**/*.ts"
    ],
    "this is local migrations test":"src/migration/**/*.ts",
    "migrations": [ 

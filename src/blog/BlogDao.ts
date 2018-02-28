@@ -78,11 +78,14 @@ export class BlogDao {
 
 
     async getTag(label: string): Promise<any> {
-        return await getConnection()
+        console.log('dao getTag');
+         let result = await getConnection()
             .createQueryBuilder()
             .from(Tag, 'tag')
             .where("tag.label like :label", { label: `%${label}%` })
             .execute();
+            console.log('dao getTag result');
+            return result;
     }
 
     async addTag(tag: Tag): Promise<any> {

@@ -13,7 +13,9 @@ export class Article {
     @Column()
     title: string;
 
-    @Column()
+    @Column({
+        type:'mediumtext'
+    })
     content: string;
 
     @Column()
