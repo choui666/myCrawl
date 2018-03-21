@@ -20,8 +20,8 @@ createConnection().then(async connection => {
     console.log('connected app!'); 
     //task任务开启
     //startCrawlCitys(connection);
-    startCrawlOldHouse(connection); 
-    startCrawlNewsByPup(connection);
+    //startCrawlOldHouse(connection); 
+    //startCrawlNewsByPup(connection);
 
     const app = new koa(); 
     //全局错误处理

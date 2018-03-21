@@ -24,7 +24,10 @@ export class Article {
     @CreateDateColumn()
     createTime: Date;
     
-    @ManyToMany(type => Tag,tag => tag.articles) 
+    @ManyToMany(type => Tag,tag => tag.articles, {
+        cascadeInsert: true,
+        cascadeUpdate: true
+    }) 
     @JoinTable() 
     tags: Tag[];
 

@@ -7,15 +7,9 @@ import { Tag } from '../entity/Tag';
 @Injectable()
 export class BlogDao {
     async saveArticle(article: Article): Promise<any> {
-        return await getConnection().manager.save(article);
-
-
-        // .createQueryBuilder() 
-        // .insert()
-        // .into(Article) 
-        // .values(article)
-        // .execute();
+        return await getConnection().manager.save(article); 
     }
+ 
 
     async getArticles(param: {
         pageSize: number,
@@ -31,7 +25,7 @@ export class BlogDao {
                 .addSelect(['group_concat(tag.id) as tagIds','group_concat(tag.label) as tagNames'])
                 .where("tag.id = :tag", { tag: param.tag })
                 .groupBy('article.id')
-                .skip(param.pageSize * (param.pageIndex - 1))
+                .offset(param.pageSize * (param.pageIndex - 1))
                 .limit(param.pageSize)
                 .execute();
         } else {
@@ -42,9 +36,22 @@ export class BlogDao {
                 .leftJoin('article.tags', 'tag') 
                 .addSelect(['group_concat(tag.id) as tagIds','group_concat(tag.label) as tagNames'])
                 .groupBy('article.id')
-                .skip(param.pageSize * (param.pageIndex - 1))
+                .offset(param.pageSize * (param.pageIndex - 1))
                 .limit(param.pageSize)
                 .execute();
+            // return await getConnection().getRepository(Article).findAndCount({  
+            //     join: {
+            //         alias: "article",
+            //         leftJoinAndSelect: {
+            //             "tag": "article.tags", 
+            //         }
+            //     },
+            //     // where:{
+            //     //     "tags":param.tag
+            //     // },
+            //     skip:param.pageSize * (param.pageIndex - 1),
+            //     take:param.pageSize
+            // });
         }
     }
 

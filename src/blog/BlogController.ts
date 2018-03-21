@@ -17,6 +17,12 @@ export class BlogController {
         ctx.body = result
     }
 
+    updateArticle = async (ctx: koa.Context) => {
+        let params = Utils.paramEmpty(ctx, ['id','title', 'content', 'shortCuts', 'tags']);
+        let result = await this.service.saveArticle(params);
+        ctx.body = result
+    } 
+
     getArticles  = async (ctx: koa.Context) => { 
         let params = Utils.paramEmpty(ctx, ['pageIndex', 'pageSize']);
         if( Number.isNaN(Number.parseInt(params.get('pageIndex'))) ){

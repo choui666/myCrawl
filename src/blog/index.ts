@@ -12,6 +12,10 @@ let blogCtr:BlogController = container.resolve(BlogController);
 
 export const BlogRoutes: route[] = [
     {
+        path: "/blog/updateArticle",
+        method: "post",
+        action: blogCtr.updateArticle
+    },{
         path: "/blog/saveArticle",
         method: "post",
         action: blogCtr.saveArticle
